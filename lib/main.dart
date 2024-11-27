@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'utils/account_initializer.dart';
 import 'pages/login_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await initializeAccounts();
   runApp(MyApp());
 }
 
