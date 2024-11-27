@@ -39,17 +39,15 @@ class AppFooter extends StatelessWidget {
     return BottomNavigationBar(
       currentIndex: currentIndex,
       onTap: (index) => _navigateTo(context, index),
-      backgroundColor: const Color.fromARGB(255, 0, 0, 0), // Warna latar
-      selectedItemColor:
-          const Color.fromARGB(255, 255, 255, 255), // Warna item yang dipilih
-      unselectedItemColor: const Color.fromARGB(
-          255, 255, 255, 255), // Warna item yang tidak dipilih
-      showSelectedLabels: false, // Sembunyikan label item yang dipilih
-      showUnselectedLabels: false, // Sembunyikan label item yang tidak dipilih
+      backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+      selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+      unselectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: 'Home', // Label tetap diperlukan meskipun tidak ditampilkan
+          label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.star),
