@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart'; // Pastikan mengimpor HomePage
+import 'home_page.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -12,7 +12,6 @@ class AboutPage extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            // Navigasi kembali ke HomePage
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => HomePage()),
@@ -22,7 +21,7 @@ class AboutPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.all(30.0), // Menambahkan margin 20px
+          margin: const EdgeInsets.all(30.0),
           child: const Padding(
             padding: EdgeInsets.all(16.0),
             child: Column(
