@@ -5,7 +5,6 @@ import '../models/movie.dart';
 class MarvelRatingService {
   final String _marvelApiUrl = 'https://mcuapi.herokuapp.com/api/v1/movies';
 
-  // Data IMDb rating manual sebagai referensi
   final Map<String, double> _imdbRatings = {
     "Iron Man": 7.9,
     "The Incredible Hulk": 6.6,
@@ -43,7 +42,6 @@ class MarvelRatingService {
     "The Marvels": 5.5,
   };
 
-  // Fungsi untuk mendapatkan data film Marvel beserta rating IMDb
   Future<List<Movie>> fetchMarvelMoviesWithRatings() async {
     try {
       final response = await http.get(Uri.parse(_marvelApiUrl));
@@ -51,14 +49,12 @@ class MarvelRatingService {
         final data = json.decode(response.body)['data'] as List;
         List<Movie> movies = data.map((json) => Movie.fromJson(json)).toList();
 
-        // Menambahkan rating IMDb jika tersedia
         for (var movie in movies) {
           if (_imdbRatings.containsKey(movie.title)) {
             movie.rating = _imdbRatings[movie.title];
           }
         }
 
-        // Mengurutkan film berdasarkan rating IMDb (jika ada)
         movies.sort((a, b) => (b.rating ?? 0).compareTo(a.rating ?? 0));
 
         return movies;
