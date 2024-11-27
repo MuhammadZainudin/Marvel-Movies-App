@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:image_picker/image_picker.dart';
 import 'home_page.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -13,7 +12,6 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   File? _profileImage;
-  // final ImagePicker _picker = ImagePicker();
 
   late Map<String, String> userDetails = {};
 
@@ -23,7 +21,6 @@ class _ProfilePageState extends State<ProfilePage> {
     _loadUserDetails();
   }
 
-  // Fungsi untuk memuat detail pengguna dari SharedPreferences
   Future<void> _loadUserDetails() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -37,22 +34,6 @@ class _ProfilePageState extends State<ProfilePage> {
       };
     });
   }
-
-  // Fungsi untuk memilih gambar profil
-  // Future<void> _pickImage() async {
-  //   final XFile? pickedFile = await _picker.pickImage(
-  //     source: ImageSource.gallery, // Bisa diganti dengan ImageSource.camera
-  //     maxWidth: 400,
-  //     maxHeight: 400,
-  //     imageQuality: 85,
-  //   );
-
-  //   if (pickedFile != null) {
-  //     setState(() {
-  //       _profileImage = File(pickedFile.path);
-  //     });
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +57,6 @@ class _ProfilePageState extends State<ProfilePage> {
               child: ListView(
                 children: [
                   GestureDetector(
-                    // onTap: _pickImage, // Ketika gambar di-tap, pilih gambar
                     child: CircleAvatar(
                       radius: 50,
                       backgroundColor: Colors.grey,
